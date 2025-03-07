@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# For Output Files
+/OUTPUT/outputCode.cpp
