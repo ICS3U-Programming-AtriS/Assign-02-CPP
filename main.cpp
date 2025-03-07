@@ -80,7 +80,8 @@ std::string surfaceAreaFormula(std::string shape, int sideAmount) {
 // Creates the code
 std::string generateCode(int sideAmount, std::string shape, std::string unit) {
     time_t timestamp = time(NULL);
-    struct tm datetime = *localtime(&timestamp);
+    struct tm datetime;
+    localtime_r(&timestamp, &datetime);
     std::string months[] = {"Jan",
                         "Feb",
                         "March",
@@ -133,7 +134,7 @@ std::string generateCode(int sideAmount, std::string shape, std::string unit) {
         "\n"
         "\nint main() {"
         "\n    // Introduction"
-        "\n    std::cout << \"\\033[0;34m\"; // BLUE TEXT"
+        "\n    std::cout << \"\\033[0;34m\";  // BLUE TEXT"
         "\n    std::cout << \"This program calculates the Volume"
         " and Surface area\";"
         "\n    std::cout << std::endl;"
@@ -157,7 +158,7 @@ std::string generateCode(int sideAmount, std::string shape, std::string unit) {
         " [Used for simplifying calculations]"
         "\n    float baseArea = " +
         std::to_string(sideAmount) +
-        " * (1.0/4.0) * pow(length,2) * " +
+        " * (1.0/4.0) * pow(length, 2) * " +
         std::to_string(tan((0.5 - 1.0 / sideAmount) * M_PI)) +
         ";"
         "\n    // Calculate the Volume"
@@ -170,7 +171,7 @@ std::string generateCode(int sideAmount, std::string shape, std::string unit) {
         ";"
         "\n"
         "\n    // Output"
-        "\n    std::cout << \"\\033[0;32m\"; // GREEN TEXT"
+        "\n    std::cout << \"\\033[0;32m\";  // GREEN TEXT"
         "\n    std::cout << \"The Volume is \";"
         "\n    std::cout << round(volume * 100) / 100;"
         "\n    std::cout << \"" +
@@ -181,9 +182,9 @@ std::string generateCode(int sideAmount, std::string shape, std::string unit) {
         "\n    std::cout << \"" +
         unit +
         "\u00b2\" << std::endl;"
-        "\n    std::cout << \"\\033[0m\"; // WHITE TEXT"
+        "\n    std::cout << \"\\033[0m\";  // WHITE TEXT"
         "\n}"
-        "";
+        "\n";
     return res;
 }
 
