@@ -238,7 +238,7 @@ int main() {
     "/home/vscode/ICS3U/Assign/Assign-02/Assign-02-CPP/OUTPUT/outputCode.cpp";
     // Open file and make it empty
     outputFileStream.open(outputFilePath, std::ios::out | std::ios::trunc);
-    // Write code to file
+    // Write code to output file
     outputFileStream << generatedCode;
     // close file
     outputFileStream.close();
