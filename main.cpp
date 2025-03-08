@@ -66,8 +66,9 @@ std::string volumeFormula(std::string shape) {
 std::string surfaceAreaFormula(std::string shape, int sideAmount) {
     // length represents base length
     // height represents height
-    // n represents the side amount
+    // initialize variable for the formula
     std::string fullFormula;
+    // n represents the side amount
     std::string n = std::to_string(sideAmount);
     if (shape == "Prism") {
         fullFormula = "(2*baseArea) + (length*" + n + "*height)";
@@ -77,6 +78,8 @@ std::string surfaceAreaFormula(std::string shape, int sideAmount) {
         ",2))";
         fullFormula = "baseArea + (length*"+n+"*0.5*"+slantFormula+")";
     }
+
+    // return the formula
     return fullFormula;
 }
 
