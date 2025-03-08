@@ -20,14 +20,13 @@ int intInput(std::string prompt, int minimum) {
         std::cin >> res;
         if (res >= minimum) {
             return res;
-        } else {
-            std::cout << "\033[0;31m";  // RED TEXT
-            std::cout << "Value must be a positive integer greater than ";
-            std::cout << minimum;
-            // Reset cin
-            std::cin.clear();
-            std::cin.ignore();
         }
+        std::cout << "\033[0;31m";  // RED TEXT
+        std::cout << "Value must be a positive integer greater than ";
+        std::cout << minimum;
+        // Reset cin
+        std::cin.clear();
+        std::cin.ignore(300, '\n');
     }
 }
 
@@ -143,10 +142,10 @@ std::string generateCode(int sideAmount, std::string shape, std::string unit) {
         "\n            return res;"
         "\n        } else {"
         "\n        std::cout << \"\\033[0;31m\";  // RED TEXT;"
-        "\n        std::cout << \"Value must be a positive integer\";"
+        "\n        std::cout << \"Value must be a positive number\";"
         "\n        // Reset cin"
         "\n        std::cin.clear();"
-        "\n        std::cin.ignore();"
+        "\n        std::cin.ignore(300, '\\n');"
         "\n        }"
         "\n    }"
         "\n}"
