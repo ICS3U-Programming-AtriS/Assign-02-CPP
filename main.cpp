@@ -53,6 +53,7 @@ std::string getShapeType() {
 std::string volumeFormula(std::string shape) {
     // length represents base length
     // height represents height
+    // initialize variable for the formula
     std::string fullFormula;
     // Match shape with the proper formula
     if (shape == "Prism") {
@@ -60,6 +61,8 @@ std::string volumeFormula(std::string shape) {
     } else if (shape == "Pyramid") {
         fullFormula = "baseArea * height * (1.0/3.0)";
     }
+
+    // return the formula
     return fullFormula;
 }
 
@@ -70,6 +73,7 @@ std::string surfaceAreaFormula(std::string shape, int sideAmount) {
     std::string fullFormula;
     // n represents the side amount
     std::string n = std::to_string(sideAmount);
+    // Match shape with the proper formula
     if (shape == "Prism") {
         fullFormula = "(2*baseArea) + (length*" + n + "*height)";
     } else if (shape == "Pyramid") {
