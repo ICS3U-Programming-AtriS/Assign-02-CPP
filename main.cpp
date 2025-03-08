@@ -195,12 +195,12 @@ std::string generateCode(int sideAmount, std::string shape, std::string unit) {
         "\n    std::cout << round(volume * 100) / 100;"
         "\n    std::cout << \"" +
         unit +
-        "\u00b3\" << std::endl;"
+        "\\u00b3\" << std::endl;"
         "\n    std::cout << \"The Surface Area is \";"
         "\n    std::cout << round(surfaceArea * 100) / 100;"
         "\n    std::cout << \"" +
         unit +
-        "\u00b2\" << std::endl;"
+        "\\u00b2\" << std::endl;"
         "\n    std::cout << \"\\033[0m\";  // WHITE TEXT"
         "\n}"
         "\n";
