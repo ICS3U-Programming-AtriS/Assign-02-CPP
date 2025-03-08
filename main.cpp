@@ -219,7 +219,7 @@ int main() {
     // Ask User for amount of sides in the base
     int sideAmount = intInput("Enter the amount of sides in the base: ", 3);
 
-    // Ask User for type of shape(prism / pyramid)
+    // Ask User for type of shape [Prism/Pyramid]
     std::string shapeType = getShapeType();
 
     // Ask User for the unit Type [It can be anything]
